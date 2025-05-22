@@ -3,16 +3,21 @@
 const inputs = document.querySelectorAll('input');
 
 inputs.forEach((input) => {
-  const label = document.createElement('label');
+  const id = input.getAttribute('id');
+  const inputName = input.getAttribute('name');
 
-  label.setAttribute('for', input.getAttribute('id'));
-  label.textContent = input.getAttribute('name');
-  label.classList.add('field-label');
-  input.parentNode.insertBefore(label, input);
+  if (id) {
+    const label = document.createElement('label');
 
-  let placeholder = input.getAttribute('name');
+    label.setAttribute('for', id);
+    label.classList.add('field-label');
+    label.textContent = inputName;
+    input.parentNode.insertBefore(label, input);
+  }
 
-  placeholder = placeholder.charAt(0).toUpperCase() + placeholder.slice(1);
+  if (inputName) {
+    const placeholder = inputName.charAt(0).toUpperCase() + inputName.slice(1);
 
-  input.setAttribute('placeholder', placeholder);
+    input.setAttribute('placeholder', placeholder);
+  }
 });

@@ -1,0 +1,2 @@
+"use strict";var inputs=document.querySelectorAll("input");inputs.forEach(function(t){var e=document.createElement("label");e.setAttribute("for",t.getAttribute("id")),e.textContent=t.getAttribute("name"),e.classList.add("field-label"),t.parentNode.insertBefore(e,t);var r=t.getAttribute("name");r=r.charAt(0).toUpperCase()+r.slice(1),t.setAttribute("placeholder",r)});
+//# sourceMappingURL=js_task_fix_form_DOM.1469d0ab.js.map
